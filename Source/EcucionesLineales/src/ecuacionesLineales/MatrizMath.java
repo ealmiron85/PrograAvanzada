@@ -259,6 +259,7 @@ public class MatrizMath {
 			if (filaColumna < 0 || filaColumna >= this.dimensionCol)
 				throw new ArrayIndexOutOfBoundsException(" Error Valor Indice de Matriz: "+filaColumna);
 			
+			
 			for(int i=filaColumna+1;i<this.dimensionFil;i++){
 				
 				if (matriz[i][filaColumna]!=0) {
@@ -380,6 +381,25 @@ public class MatrizMath {
 		}
 		return this.determinanteCuadrada();
 		  	
+	}
+	
+	public void tratarDiagonalPrincipal(float[][] matriz){
+		try {
+
+			for (int i = 0; i < this.getDimensionFil(); i++) {
+				if(matriz[i][i]==0){
+					if(this.intercambiarConRenglonNoNuloPorDebajo(matriz, i)==false){
+						throw new Exception(" No Se Puede Resolver La Inversa "+i);	
+					}
+				}
+				this.llevarACeroPosicionesPorArriba(matriz, i);
+				this.llevarACeroPosicionesPorDebajo(matriz, i);
+				this.productoDeUnaFila(matriz, i, 1/(matriz[i][i]));
+				
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
 }
