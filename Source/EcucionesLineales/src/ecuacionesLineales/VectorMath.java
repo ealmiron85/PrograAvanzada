@@ -18,16 +18,13 @@ public class VectorMath {
 		return dimension;
 	}
 
-	public void setDimension(int dimension) {
-		this.dimension = dimension;
-	}
-
 	public float[] getComponentes() {
 		return componentes;
 	}
 
 	public void setComponentes(float[] componentes) {
 		this.componentes = componentes;
+		this.dimension=componentes.length;
 	}
 	
 	public VectorMath sumar(VectorMath vector){
