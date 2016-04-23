@@ -402,5 +402,22 @@ public class MatrizMath {
 		}
 	}
 	
+	public boolean tomarMatrizCuadradaALaDerecha(float[][] matriz){
+		try {
+			if (this.getDimensionCol()<this.getDimensionFil()) { 
+				throw new DistDimException(" Se Intenta Operar Con Filas Mayores Que Columnas ");
+			}
+			matriz=new float[this.getDimensionFil()][this.getDimensionFil()];
+			for(int i=0;i<=this.getDimensionFil();i++)
+				for (int j = 0; j < this.getDimensionFil(); j++) {
+					matriz[i][j]=this.getComponentes()[i][this.getDimensionCol()-this.dimensionFil+j];
+					
+				}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+			return true;
+	} 
 }
 	
