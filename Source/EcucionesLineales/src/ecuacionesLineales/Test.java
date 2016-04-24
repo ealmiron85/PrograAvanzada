@@ -18,12 +18,21 @@ public class Test {
 //		System.out.println(v1.equals(v3));
 //		MatrizMath mat1 = new MatrizMath("matriz.in");
 //		MatrizMath mat2 = new MatrizMath("matriz2.in");
-		MatrizMath mat4 = new MatrizMath("matriz4.in");
+		MatrizMath mat4 = new MatrizMath("matriz.in");
 		//System.out.println(mat1.toString());
 		System.out.println(mat4.toString());
 		System.out.println("**************");
-		mat4.llevarACeroPosicionesPorDebajo(mat4.getComponentes(),1);
-		System.out.println(mat4.toString());
+		float matriz[][]=mat4.getComponentes();
+		mat4.tratarDiagonalPrincipal(matriz);
+		
+		String resultado="";
+		for(int i=0;i<matriz.length;i++){
+			for(int j=0;j<matriz[0].length;j++){
+				resultado += matriz[i][j]+" ";
+			}
+			resultado += "\n";
+		}
+		System.out.println(resultado);
 		
 		
 		
