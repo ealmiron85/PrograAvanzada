@@ -22,8 +22,8 @@ public class Test {
 		//System.out.println(mat1.toString());
 		System.out.println(mat4.toString());
 		System.out.println("**************");
-		float matriz[][]=mat4.getComponentes();
-		mat4.tratarDiagonalPrincipal(matriz);
+		//float matriz[][]=mat4.getComponentes();
+		//mat4.tratarDiagonalPrincipal(matriz);
 		
 		String resultado="";
 		for(int i=0;i<matriz.length;i++){

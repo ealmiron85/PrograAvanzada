@@ -55,6 +55,9 @@ public class MatrizMath {
 	}
 	
 	public void setComponentes(float[][] componentes){
+		this.dimensionFil=componentes.length;
+		this.dimensionCol=componentes[0].length;
+		this.componentes=new float[this.dimensionFil][this.dimensionCol];
 		for (int i = 0; i < this.dimensionFil; i++) {
 			for (int j = 0; j < this.dimensionCol; j++) {
 				this.componentes[i][j]=componentes[i][j];
@@ -70,7 +73,7 @@ public class MatrizMath {
 	}
 
 	public float[][] getComponentes() {
-		return componentes;
+		return this.clone().componentes;
 	}
 	
 	public String  toString(){
@@ -403,7 +406,9 @@ public class MatrizMath {
 	}
 	
 	public MatrizMath invertir(){
-		MatrizMath inversa=null;
+		MatrizMath inversa=this.clone();
+		float [][] matriz=this.getComponentes();
+		
 		try {
 			this.tratarDiagonalPrincipal(matriz);
 		} catch (Exception e) {
