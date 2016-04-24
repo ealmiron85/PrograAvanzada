@@ -420,5 +420,23 @@ public class MatrizMath {
 		return inversa;
 	}
 	
+	public float[][] tomarMatrizCuadradaALaDerecha(float[][] matriz){
+		float[][]matrizCuadrada=null;
+		try {
+			if (this.getDimensionCol()<this.getDimensionFil()) { 
+				throw new DistDimException(" Se Intenta Operar Con Filas Mayores Que Columnas ");
+			}
+			matrizCuadrada=new float[this.getDimensionFil()][this.getDimensionFil()];
+			for(int i=0;i<this.getDimensionFil();i++)
+				for (int j = 0; j < this.getDimensionFil(); j++) {
+					matrizCuadrada[i][j]=matriz[i][this.getDimensionCol()-this.dimensionFil+j];
+					
+				}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return matrizCuadrada;
+	}
+	
 }
 	
