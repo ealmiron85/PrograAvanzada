@@ -402,22 +402,18 @@ public class MatrizMath {
 		}
 	}
 	
-	public boolean tomarMatrizCuadradaALaDerecha(float[][] matriz){
+	public MatrizMath invertir(){
+		MatrizMath inversa=null;
 		try {
-			if (this.getDimensionCol()<this.getDimensionFil()) { 
-				throw new DistDimException(" Se Intenta Operar Con Filas Mayores Que Columnas ");
-			}
-			matriz=new float[this.getDimensionFil()][this.getDimensionFil()];
-			for(int i=0;i<=this.getDimensionFil();i++)
-				for (int j = 0; j < this.getDimensionFil(); j++) {
-					matriz[i][j]=this.getComponentes()[i][this.getDimensionCol()-this.dimensionFil+j];
-					
-				}
+			this.tratarDiagonalPrincipal(matriz);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			return false;
+			e.getMessage();
 		}
-			return true;
-	} 
+		
+		float[][] matrizInversa=this.tomarMatrizCuadradaALaDerecha(matriz);
+		inversa.setComponentes(matrizInversa);
+		return inversa;
+	}
+	
 }
 	
