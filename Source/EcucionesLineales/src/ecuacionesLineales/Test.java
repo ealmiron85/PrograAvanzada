@@ -24,15 +24,15 @@ public class Test {
 		System.out.println("**************");
 		//float matriz[][]=mat4.getComponentes();
 		//mat4.tratarDiagonalPrincipal(matriz);
-		
-		String resultado="";
-		for(int i=0;i<matriz.length;i++){
-			for(int j=0;j<matriz[0].length;j++){
-				resultado += matriz[i][j]+" ";
-			}
-			resultado += "\n";
-		}
-		System.out.println(resultado);
+		System.out.println(mat4.invertir().toString());
+		//String resultado="";
+		//for(int i=0;i<matriz.length;i++){
+		//	for(int j=0;j<matriz[0].length;j++){
+		//		resultado += matriz[i][j]+" ";
+		//	}
+		//	resultado += "\n";
+		//}
+		//System.out.println(resultado);
 		
 		
 		
